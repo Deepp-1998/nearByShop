@@ -1,0 +1,38 @@
+{
+  "registeredShop": [
+    {
+      "id": "df46",
+      "shopDetails": {
+        "shopName": "Amit V store",
+        "firstOpenDate": "2024-08-01",
+        "licenceNo": "132345",
+        "pincode": "754433",
+        "shopAddress": "sadffgghn dfghx dd"
+      },
+      "ownerDetails": {
+        "ownerName": "Amit kumar",
+        "dob": "2024-08-13",
+        "gender": "male",
+        "mob": "08280147490",
+        "email": "pandey.deepak6@gmail.com"
+      }
+    },
+    {
+      "id": "a690",
+      "shopDetails": {
+        "shopName": "Jena V store",
+        "firstOpenDate": "2024-08-16",
+        "licenceNo": "3243",
+        "pincode": "2343324",
+        "shopAddress": "sgfbsd sg"
+      },
+      "ownerDetails": {
+        "ownerName": "Jena",
+        "dob": "2024-08-01",
+        "gender": "male",
+        "mob": "08280147490",
+        "email": "ssfs@gmail.com"
+      }
+    }
+  ]
+}
