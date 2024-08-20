@@ -1,1 +1,38 @@
-<p>view-grocery works!</p>
+<div class="card my-5">
+    <div class="card-header d-flex justify-content-between">
+        <h4 class="mb-0">Grocery Products</h4>
+        <button class="btn btn-success btn-sm" routerLink="../addGrocery">Add Grocery Item</button>
+    </div>
+    <div class="card-body">
+        <div class="d-none mb-3" #deleteMsgAlert>Product Deleted!!</div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Sl#</th>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">About Product</th>
+                    <th scope="col">Product Quantity</th>
+                    <th scope="col">Product Units</th>
+                    <th scope="col">Price</th>
+                    <th scope="col" style="width: 150px;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of allProduct;index as i;">
+                    <td>{{i+1}}</td>
+                    <td>{{item.productID}}</td>
+                    <td>{{item.productName}}</td>
+                    <td>{{item.Describtion}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.units}}</td>
+                    <td>{{item.price}}</td> 
+                    <td>
+                        <button class="btn btn-sm btn-primary me-2"  [routerLink]="['../updateGrocery',item.id]">Update</button>
+                        <button class="btn btn-sm btn-danger" (click)="deleteItem(item.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

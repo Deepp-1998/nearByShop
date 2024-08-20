@@ -85,5 +85,66 @@
         "email": "rajat@gmail.com"
       }
     }
+  ],
+  "Products": [
+    {
+      "id": "bc58",
+      "productID": 12,
+      "productName": "Ice Cream",
+      "quantity": 21,
+      "price": "40Rs /piece",
+      "Describtion": "Testy"
+    },
+    {
+      "id": "b949",
+      "productID": 12,
+      "productName": "Dal",
+      "quantity": 12,
+      "price": "3243",
+      "Describtion": "jvbjn"
+    },
+    {
+      "productID": 12,
+      "productName": "Sugar",
+      "quantity": 12,
+      "units": 65,
+      "price": "57",
+      "Describtion": "fgjgbhjhgh",
+      "id": "f5d7"
+    },
+    {
+      "id": "9a3d",
+      "productID": 34,
+      "productName": "wheel surf 100grm",
+      "quantity": 50,
+      "price": "10Rs/piece",
+      "Describtion": "dhcgvbn"
+    },
+    {
+      "id": "8275",
+      "productID": 55,
+      "productName": "jeera Rice",
+      "quantity": 100,
+      "price": "3456",
+      "Describtion": "ghfjhbj"
+    },
+    {
+      "id": "5e15",
+      "productID": 34,
+      "productName": "sunflower Oil",
+      "quantity": "1ltr",
+      "units": 10,
+      "price": "120Rs/ltr",
+      "Describtion": "good Oil"
+    },
+    {
+      "productID": 54,
+      "productName": "Maggy  100gram packet",
+      "quantity": "100gram",
+      "units": 50,
+      "price": "50Rs/piece",
+      "Describtion": "Learn about the history, usage and variations  ",
+      "id": "a5a0"
+    }
   ]
 }

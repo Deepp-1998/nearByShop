@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ShopkeeperService } from '../../services/shopkeeper.service';
+import { GroceryShopService } from '../../services/grocery-shop.service';
 import { CanComponentDeactivate } from '../../auth/un-saved-reg.guard';
 
 @Component({
@@ -14,7 +14,7 @@ export class GroceryShopRegComponent implements OnInit,CanComponentDeactivate{
   formErrorAlert: boolean= false;
   formSuccessAlert: boolean= false;
 
-  constructor(private fb:FormBuilder,private _shopkeeperService:ShopkeeperService) {}
+  constructor(private fb:FormBuilder,private _shopkeeperService:GroceryShopService) {}
 
   ngOnInit() {
 

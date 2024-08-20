@@ -1,9 +1,9 @@
-<div class="row my-5">
-    <div class="col-md-6">
+<div class="row my-5 justify-content-center">
+    <div class="col-md-7">
         <div class="card">
-            <h3 class="card-header">Grocery</h3>
+            <h3 class="card-header">Update Grocery</h3>
             <div class="card-body">
-                <form class="mb-3" [formGroup]="groceryForm" (ngSubmit)="onSubmit()">
+                <form class="mb-3" [formGroup]="groceryForm" (ngSubmit)="updateform()">
                     <div class="row g-3 mb-4">
                         <div class="col-md-4">
                             <label for="">Item ID</label>
@@ -30,21 +30,9 @@
                         </div>
                     </div>
                     <button class="btn btn-success" type="submit">Add Item</button>
-                </form>
-                <div #formAlert class="alert" role="alert"></div> 
+                </form> 
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="d-flex justify-content-between mb-3">
-            <h4 class="mb-0">Grocery List</h4>
-            <button class="btn btn-info btn-sm ms-auto" *ngIf="addedGrocery.length>0" (click)="publishProduct()">Publish Product</button>
-            <button class="btn btn-success btn-sm ms-2 " routerLink="../viewGrocery">View All Products</button>
-        </div>
-        <hr>
-        <div class="d-none" #publishAlertMsg>Product Deleted!!</div>
-        <ng-container *ngFor="let groceryItem of addedGrocery">
-            <app-grocery-item [groceryItem]="groceryItem" (deleteItemEvent)="deleteItem($event)"></app-grocery-item>
-        </ng-container> 
-    </div>
 </div>
+ 

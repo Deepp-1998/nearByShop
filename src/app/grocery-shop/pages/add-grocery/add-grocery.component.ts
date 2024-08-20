@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CanComponentDeactivate } from '../../auth/un-saved-reg.guard';
-import { Observable } from 'rxjs';
+import { concatMap, from } from 'rxjs';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-add-grocery',
@@ -13,39 +14,71 @@ export class AddGroceryComponent implements OnInit,CanComponentDeactivate{
   groceryForm!: FormGroup;
   addedGrocery:any = [];
   @ViewChild('formAlert') formAlert!:ElementRef;
+  @ViewChild('publishAlertMsg') publishAlertMsg!:ElementRef;
 
-  constructor(private fb:FormBuilder) {}
+  constructor(private fb:FormBuilder,private productService:ProductsService) {}
 
   ngOnInit(): void {
     this.groceryForm = this.fb.group({
-      itemID: ['',[Validators.required,Validators.min(0)]],
-      itemName: ['',[Validators.required,Validators.minLength(3)]],
+      productID: ['',[Validators.required,Validators.min(0)]],
+      productName: ['',[Validators.required,Validators.minLength(3)]],
       quantity: ['',[Validators.required,Validators.min(1)]],
+      units: ['',[Validators.required,Validators.min(1)]],
       price: ['',[Validators.required]],
       Describtion: ['',[Validators.required]]
     })
   }
-  onSubmit() { 
-    console.log(this.groceryForm)
+
+  // Use for form submit
+  onSubmit() {  
     if (this.groceryForm.valid) {
       this.addedGrocery.push(this.groceryForm.value)
       this.groceryForm.reset();    
-      console.log(this.addedGrocery);
+      // console.log(this.addedGrocery);
 
       this.formAlert.nativeElement.className = 'alert  alert-success';
-      this.formAlert.nativeElement.innerHTML = 'Item added Successfully!';      
+      this.formAlert.nativeElement.innerHTML = 'Item added Successfully!';    
+      setTimeout(() => {
+        this.formAlert.nativeElement.className = 'd-none';        
+      }, 1000);  
     } else {
       this.formAlert.nativeElement.className = 'alert alert-warning';
       this.formAlert.nativeElement.innerHTML = 'All Fields are Mandatory!'; 
+      setTimeout(() => {
+        this.formAlert.nativeElement.className = 'd-none';        
+      }, 1000);
       console.log(this.groceryForm.errors)
     }
   }
 
+  // used to delete each item
   deleteItem(id:any) {
-    this.addedGrocery.splice(id,1);
-    console.log(this.addedGrocery)
+    const itemIndex = this.addedGrocery.findIndex((item:any)=>item.productID === id); 
+    this.addedGrocery.splice(itemIndex,1); 
+  } 
+
+  // publish all products for public
+  publishProduct() {
+    let Products = this.addedGrocery;
+    from(Products).pipe( 
+      concatMap((item:any)=>{
+        return this.productService.postProduct(item);
+      })
+    ).subscribe({
+      next: ()=> {        
+        // console.log("Products are available for public now.",result)
+        this.addedGrocery = [];
+        this.publishAlertMsg.nativeElement.className = 'alert alert-success mb-3';
+        setTimeout(() => {
+          this.publishAlertMsg.nativeElement.className = 'd-none';          
+        }, 1000);
+      },
+      error: (err)=> {
+        console.error("error  is here",err)
+      }
+    }); 
   }
- 
+
   canDeactivate():boolean {
     if (this.groceryForm.dirty) {
       return confirm('Unsave changes detected. Want to discard all?');

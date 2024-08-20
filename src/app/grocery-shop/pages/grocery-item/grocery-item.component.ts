@@ -13,9 +13,9 @@ export class GroceryItemComponent {
   constructor() { }
 
   @Output() deleteItemEvent = new EventEmitter();
+  @Output() updateItemEvent = new EventEmitter();
 
   deleteItem(id:any){
     this.deleteItemEvent.emit(id);
-  }
-
+  } 
 }

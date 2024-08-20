@@ -10,8 +10,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddGroceryComponent } from './pages/add-grocery/add-grocery.component';
 import { ViewGroceryComponent } from './pages/view-grocery/view-grocery.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ShopkeeperService } from './services/shopkeeper.service';
+import { GroceryShopService } from './services/grocery-shop.service';
 import { GroceryItemComponent } from './pages/grocery-item/grocery-item.component';
+import { ProductsService } from './services/products.service';
+import { UpdateGroceryComponent } from './pages/update-grocery/update-grocery.component';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { GroceryItemComponent } from './pages/grocery-item/grocery-item.componen
     DashboardComponent,
     AddGroceryComponent,
     ViewGroceryComponent,
-    GroceryItemComponent
+    GroceryItemComponent,
+    UpdateGroceryComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +35,7 @@ import { GroceryItemComponent } from './pages/grocery-item/grocery-item.componen
     HttpClientModule
   ],
   providers: [
-    ShopkeeperService
+    GroceryShopService,ProductsService
   ]
 })
 export class GroceryShopModule { }

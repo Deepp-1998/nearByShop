@@ -1,6 +1,6 @@
 <div class="card mb-3">
     <div class="card-body">
-        <h5 class="card-title">{{groceryItem.itemName}}</h5>
+        <h5 class="card-title">{{groceryItem.productName}}</h5>
         <p>
             {{groceryItem.Describtion}}
         </p>
@@ -15,9 +15,8 @@
                     <small class="">{{groceryItem.price}}</small>
                 </div>
             </div>
-            <div class="col-md-3 text-end">
-                <button class="btn btn-sm btn-primary me-2">Update</button>
-                <button class="btn btn-sm btn-danger" (click)="deleteItem(groceryItem.itemID)">Delete</button>
+            <div class="col-md-3 text-end"> 
+                <button class="btn btn-sm btn-danger" (click)="deleteItem(groceryItem.productID)">Delete</button>
             </div>
         </div>
        
