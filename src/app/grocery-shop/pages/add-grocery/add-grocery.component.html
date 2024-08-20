@@ -1,0 +1,45 @@
+<div class="row my-5">
+    <div class="col-md-6">
+        <div class="card">
+            <h3 class="card-header">Grocery</h3>
+            <div class="card-body">
+                <form class="mb-3" [formGroup]="groceryForm" (ngSubmit)="onSubmit()">
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-2">
+                            <label for="">Item ID</label>
+                            <input type="number" class="form-control" formControlName="itemID"  > 
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Item Name</label>
+                            <input type="text" class="form-control" formControlName="itemName"> 
+                        </div>
+                        <div class="col-md-2">
+                            <label for="">Quantity</label>
+                            <input type="number" class="form-control" formControlName="quantity"> 
+                        </div>                         
+                        <div class="col-md-4"> 
+                            <label for="">Prince</label>
+                            <input type="text" class="form-control" formControlName="price"> 
+                        </div>
+                        <div class="col-md-12">
+                            <textarea name="" class="form-control" rows="3" id="" formControlName="Describtion"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="submit">Add Item</button>
+                </form>
+                <div #formAlert class="alert" role="alert"></div> 
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ng-container *ngIf="addedGrocery.length>0"> 
+            <div class="d-flex justify-content-between mb-3">
+                <h3>Grocery List</h3>
+                <button class="btn btn-success">Make Available</button>
+            </div>
+            <ng-container *ngFor="let groceryItem of addedGrocery">
+                <app-grocery-item [groceryItem]="groceryItem" (deleteItemEvent)="deleteItem($event)"></app-grocery-item>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

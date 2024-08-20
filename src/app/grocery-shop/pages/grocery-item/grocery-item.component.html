@@ -1,0 +1,25 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{groceryItem.itemName}}</h5>
+        <p>
+            {{groceryItem.Describtion}}
+        </p>
+        <div class="row">
+            <div class="col">
+                <div class="mb-1">
+                    Quantity: 
+                    <small class="">{{groceryItem.quantity}}</small>
+                </div>
+                <div>
+                    Price: 
+                    <small class="">{{groceryItem.price}}</small>
+                </div>
+            </div>
+            <div class="col-md-3 text-end">
+                <button class="btn btn-sm btn-primary me-2">Update</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteItem(groceryItem.itemID)">Delete</button>
+            </div>
+        </div>
+       
+    </div>
+</div>

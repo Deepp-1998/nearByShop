@@ -1,0 +1,89 @@
+{
+  "registeredShop": [
+    {
+      "id": "df46",
+      "shopDetails": {
+        "shopName": "Amit V store",
+        "firstOpenDate": "2024-08-01",
+        "licenceNo": "132345",
+        "pincode": "754433",
+        "shopAddress": "sadffgghn dfghx dd"
+      },
+      "ownerDetails": {
+        "ownerName": "Amit kumar",
+        "dob": "2024-08-13",
+        "gender": "male",
+        "mob": "08280147490",
+        "email": "pandey.deepak6@gmail.com"
+      }
+    },
+    {
+      "id": "a690",
+      "shopDetails": {
+        "shopName": "Jena V store",
+        "firstOpenDate": "2024-08-16",
+        "licenceNo": "3243",
+        "pincode": "2343324",
+        "shopAddress": "sgfbsd sg"
+      },
+      "ownerDetails": {
+        "ownerName": "Jena",
+        "dob": "2024-08-01",
+        "gender": "male",
+        "mob": "08280147490",
+        "email": "ssfs@gmail.com"
+      }
+    },
+    {
+      "id": "0fe7",
+      "shopDetails": {
+        "shopName": "Deepak Book Store",
+        "firstOpenDate": "2024-08-02",
+        "licenceNo": "13234545",
+        "pincode": "776786",
+        "shopAddress": "sdfafsas df"
+      },
+      "ownerDetails": {
+        "ownerName": "Deepak",
+        "dob": "2023-08-22",
+        "gender": "male",
+        "mob": "08280147490",
+        "email": "pandeydeepak6@gmail.com"
+      }
+    },
+    {
+      "id": "0a7f",
+      "shopDetails": {
+        "shopName": "Tony V Store",
+        "firstOpenDate": "2024-08-01",
+        "licenceNo": "132435",
+        "pincode": "343423",
+        "shopAddress": "Patia"
+      },
+      "ownerDetails": {
+        "ownerName": "Tony",
+        "dob": "2024-08-15",
+        "gender": "male",
+        "mob": "8765453454",
+        "email": "pandeTony6@gmail.com"
+      }
+    },
+    {
+      "id": "2fda",
+      "shopDetails": {
+        "shopName": "Rajat Pan Dukan",
+        "firstOpenDate": "2024-08-08",
+        "licenceNo": "434342",
+        "pincode": "542433",
+        "shopAddress": "sadjhjksd"
+      },
+      "ownerDetails": {
+        "ownerName": "Rajat",
+        "dob": "2024-08-14",
+        "gender": "male",
+        "mob": "8786547865",
+        "email": "rajat@gmail.com"
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {  RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -13,8 +14,10 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent
   },
-  { path: 'shopkeeper', loadChildren: () => import('./shopkeeper/shopkeeper.module').then(m => m.ShopkeeperModule) },
-  { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) }  
+  { path: 'groceryShop', loadChildren: () => import('./grocery-shop/grocery-shop.module').then(m => m.GroceryShopModule) },
+  { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) } ,
+  {path: '**',component: PageNotFoundComponent}
+
 ]
 
 

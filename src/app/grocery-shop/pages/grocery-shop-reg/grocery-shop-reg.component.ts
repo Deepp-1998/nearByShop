@@ -4,11 +4,11 @@ import { ShopkeeperService } from '../../services/shopkeeper.service';
 import { CanComponentDeactivate } from '../../auth/un-saved-reg.guard';
 
 @Component({
-  selector: 'app-shopkeeper-reg',
-  templateUrl: './shopkeeper-reg.component.html',
-  styleUrls: ['./shopkeeper-reg.component.scss']
+  selector: 'app-grocery-shop-reg',
+  templateUrl: './grocery-shop-reg.component.html',
+  styleUrls: ['./grocery-shop-reg.component.scss']
 })
-export class ShopkeeperRegComponent implements OnInit,CanComponentDeactivate{
+export class GroceryShopRegComponent implements OnInit,CanComponentDeactivate{
 
   shopkeeperForm!:FormGroup;
   formErrorAlert: boolean= false;
@@ -45,7 +45,10 @@ export class ShopkeeperRegComponent implements OnInit,CanComponentDeactivate{
         error: console.error
       });
       // console.log(this.shopkeeperForm.value);
-      this.shopkeeperForm.reset;
+      this.shopkeeperForm.reset();
+      setTimeout(() => {
+        this.formSuccessAlert=false;
+      }, 200);
     } else {
        this.formErrorAlert = true;
        console.error(this.shopkeeperForm.errors)

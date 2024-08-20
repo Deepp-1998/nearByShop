@@ -2,9 +2,9 @@
 <div class="row my-5">
     <div class="col-xl-8 mx-auto">
         <div class="card">
-            <h4 class="card-header">Store Details</h4>
+            <h4 class="card-header">Grocery Shop Registration</h4>
             <div class="card-body">               
-                <form [formGroup]="shopkeeperForm" (ngSubmit)="onSubmit()">
+                <form class="mb-4" [formGroup]="shopkeeperForm" (ngSubmit)="onSubmit()">
                     <h4>Store Details</h4>
                     <div class="row g-3 mb-4" formGroupName="shopDetails">
                         <div class="col-md-6">
@@ -67,8 +67,7 @@
                     <button type="button" class="btn-close"  (click)="formErrorAlert=false"></button>
                 </div>
                 <div class="alert alert-success" role="alert" *ngIf="formSuccessAlert">
-                   Registed Successfully!!!
-                    <button type="button" class="btn-close"  (click)="formSuccessAlert=false"></button>
+                   Registed Successfully!!! 
                 </div>
             </div>
         </div>
