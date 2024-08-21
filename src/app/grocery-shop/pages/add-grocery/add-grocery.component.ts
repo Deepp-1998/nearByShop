@@ -1,8 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CanComponentDeactivate } from '../../auth/un-saved-reg.guard';
-import { concatMap, from } from 'rxjs';
+import { concatMap, from, map } from 'rxjs';
 import { ProductsService } from '../../services/products.service';
+import { GroceryShopService } from '../../services/grocery-shop.service';
 
 @Component({
   selector: 'app-add-grocery',
@@ -16,7 +17,11 @@ export class AddGroceryComponent implements OnInit,CanComponentDeactivate{
   @ViewChild('formAlert') formAlert!:ElementRef;
   @ViewChild('publishAlertMsg') publishAlertMsg!:ElementRef;
 
-  constructor(private fb:FormBuilder,private productService:ProductsService) {}
+  constructor(
+    private fb:FormBuilder,
+    private productService:ProductsService,
+    private groceryShopService:GroceryShopService
+  ) {}
 
   ngOnInit(): void {
     this.groceryForm = this.fb.group({
@@ -60,9 +65,11 @@ export class AddGroceryComponent implements OnInit,CanComponentDeactivate{
   // publish all products for public
   publishProduct() {
     let Products = this.addedGrocery;
-    from(Products).pipe( 
-      concatMap((item:any)=>{
-        return this.productService.postProduct(item);
+    from(Products).pipe(  
+      concatMap((item:any)=>{        
+        const getShopID = this.groceryShopService.getShopID().subscribe(id=>id)
+        const addAllProductToShopID = {...item, getShopID}; 
+        return this.productService.postProduct(addAllProductToShopID);         
       })
     ).subscribe({
       next: ()=> {        

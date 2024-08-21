@@ -14,7 +14,7 @@ export class GroceryShopRegComponent implements OnInit,CanComponentDeactivate{
   formErrorAlert: boolean= false;
   formSuccessAlert: boolean= false;
 
-  constructor(private fb:FormBuilder,private _shopkeeperService:GroceryShopService) {}
+  constructor(private fb:FormBuilder,private groceryShopService:GroceryShopService) {}
 
   ngOnInit() {
 
@@ -40,7 +40,7 @@ export class GroceryShopRegComponent implements OnInit,CanComponentDeactivate{
   onSubmit() {
     if (this.shopkeeperForm.valid) {
       this.formErrorAlert = false;
-      this._shopkeeperService.addGroceryShop(this.shopkeeperForm.value).subscribe({
+      this.groceryShopService.addGroceryShop(this.shopkeeperForm.value).subscribe({
         next: ()=>this.formSuccessAlert= true,
         error: console.error
       });

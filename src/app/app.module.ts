@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; 
+import { GroceryShopService } from './grocery-shop/services/grocery-shop.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,  
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GroceryShopService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

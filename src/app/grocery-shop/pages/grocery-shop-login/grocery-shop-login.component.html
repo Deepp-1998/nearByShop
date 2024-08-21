@@ -5,17 +5,16 @@
                <form class="mb-4">
                     <h2 class="mb-4">Login</h2>
                     <div class="mb-3">
-                        <label for="mobID" class="form-label">Mobile</label>
-                        <input type="text" class="form-control" id="mobID" placeholder="Enter Mobile no.">
-                    </div>
-                    <div class="mb-4">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Enter password">
-                    </div>
-                    <button type="submit" class="btn btn-lg btn-success">Login</button>
-               </form> 
+                        <label for="shopID" class="form-label" >Shop ID</label>
+                        <input type="text" class="form-control" #shopID id="shopID" placeholder="Enter Shop ID">
+                    </div> 
+                    <button type="submit" class="btn btn-lg btn-success" (click)="loginToGroceryShop()">Login</button>
 
-               <p>Don't have an account ?<a routerLink="../groceryShopReg">Register Now</a></p>
+                </form>                 
+                <p>Don't have an account ?<a routerLink="../groceryShopReg">Register Now</a></p>
+                <div class="alert alert-warning" *ngIf="loginAlertMsg">
+                    Please enter a Valid Shop ID.
+                </div>
             </div>
         </div>
     </div>

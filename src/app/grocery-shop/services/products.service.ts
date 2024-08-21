@@ -18,7 +18,7 @@ export class ProductsService {
   getProductByID(id:any):Observable<any> {
     return this.http.get(`${this.productApiUrl}${id}`);
   }
-  
+
   postProduct(item:any):Observable<any>  {
     return this.http.post(this.productApiUrl,item);
   }
@@ -30,8 +30,5 @@ export class ProductsService {
   updateProduct(id:any,item:any):Observable<any>  {
     return this.http.put(`${this.productApiUrl}${id}`,item);
   }
-
-  
-
-
+ 
 }

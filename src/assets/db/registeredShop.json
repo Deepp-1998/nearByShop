@@ -16,135 +16,36 @@
         "mob": "08280147490",
         "email": "pandey.deepak6@gmail.com"
       }
-    },
-    {
-      "id": "a690",
-      "shopDetails": {
-        "shopName": "Jena V store",
-        "firstOpenDate": "2024-08-16",
-        "licenceNo": "3243",
-        "pincode": "2343324",
-        "shopAddress": "sgfbsd sg"
-      },
-      "ownerDetails": {
-        "ownerName": "Jena",
-        "dob": "2024-08-01",
-        "gender": "male",
-        "mob": "08280147490",
-        "email": "ssfs@gmail.com"
-      }
-    },
-    {
-      "id": "0fe7",
-      "shopDetails": {
-        "shopName": "Deepak Book Store",
-        "firstOpenDate": "2024-08-02",
-        "licenceNo": "13234545",
-        "pincode": "776786",
-        "shopAddress": "sdfafsas df"
-      },
-      "ownerDetails": {
-        "ownerName": "Deepak",
-        "dob": "2023-08-22",
-        "gender": "male",
-        "mob": "08280147490",
-        "email": "pandeydeepak6@gmail.com"
-      }
-    },
-    {
-      "id": "0a7f",
-      "shopDetails": {
-        "shopName": "Tony V Store",
-        "firstOpenDate": "2024-08-01",
-        "licenceNo": "132435",
-        "pincode": "343423",
-        "shopAddress": "Patia"
-      },
-      "ownerDetails": {
-        "ownerName": "Tony",
-        "dob": "2024-08-15",
-        "gender": "male",
-        "mob": "8765453454",
-        "email": "pandeTony6@gmail.com"
-      }
-    },
-    {
-      "id": "2fda",
-      "shopDetails": {
-        "shopName": "Rajat Pan Dukan",
-        "firstOpenDate": "2024-08-08",
-        "licenceNo": "434342",
-        "pincode": "542433",
-        "shopAddress": "sadjhjksd"
-      },
-      "ownerDetails": {
-        "ownerName": "Rajat",
-        "dob": "2024-08-14",
-        "gender": "male",
-        "mob": "8786547865",
-        "email": "rajat@gmail.com"
-      }
     }
   ],
   "Products": [
     {
-      "id": "bc58",
-      "productID": 12,
-      "productName": "Ice Cream",
-      "quantity": 21,
-      "price": "40Rs /piece",
-      "Describtion": "Testy"
+      "id": "5e71",
+      "productID": 343,
+      "productName": "sdgf",
+      "quantity": "343",
+      "units": 3454,
+      "price": "34",
+      "Describtion": "sdfsfg",
+      "getShopID": "df46"
     },
     {
-      "id": "b949",
-      "productID": 12,
-      "productName": "Dal",
-      "quantity": 12,
-      "price": "3243",
-      "Describtion": "jvbjn"
-    },
-    {
-      "productID": 12,
-      "productName": "Sugar",
-      "quantity": 12,
-      "units": 65,
-      "price": "57",
-      "Describtion": "fgjgbhjhgh",
-      "id": "f5d7"
-    },
-    {
-      "id": "9a3d",
-      "productID": 34,
-      "productName": "wheel surf 100grm",
-      "quantity": 50,
-      "price": "10Rs/piece",
-      "Describtion": "dhcgvbn"
-    },
-    {
-      "id": "8275",
-      "productID": 55,
-      "productName": "jeera Rice",
-      "quantity": 100,
-      "price": "3456",
-      "Describtion": "ghfjhbj"
-    },
-    {
-      "id": "5e15",
-      "productID": 34,
-      "productName": "sunflower Oil",
-      "quantity": "1ltr",
-      "units": 10,
-      "price": "120Rs/ltr",
-      "Describtion": "good Oil"
-    },
-    {
+      "id": "52f1",
       "productID": 54,
-      "productName": "Maggy  100gram packet",
-      "quantity": "100gram",
-      "units": 50,
-      "price": "50Rs/piece",
-      "Describtion": "Learn about the history, usage and variations  ",
-      "id": "a5a0"
+      "productName": "76gkjbh",
+      "quantity": "5",
+      "units": 67,
+      "price": "56",
+      "Describtion": "f7tyghbj",
+      "getShopID": {
+        "closed": false,
+        "currentObservers": null,
+        "observers": [],
+        "isStopped": false,
+        "hasError": false,
+        "thrownError": null,
+        "_value": null
+      }
     }
   ]
 }

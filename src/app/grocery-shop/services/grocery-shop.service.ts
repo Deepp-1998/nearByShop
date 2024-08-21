@@ -1,16 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroceryShopService {
 
-  apiUrlIs = 'http://localhost:3000/registeredShop';
-  
-  constructor(private http:HttpClient,) { }
+  apiUrlIs = 'http://localhost:3000/registeredShop/';
 
+  getShopDetails = new BehaviorSubject<object>({});
+ 
+  
+  constructor(private http:HttpClient) { 
+    this.getShopID().subscribe(shopID => {
+      console.log("Shop ID:", shopID);
+    });
+  }
+
+  getShopID() :Observable<any>{
+    const shopID = sessionStorage.getItem('shopID');
+    return  of(shopID);
+  }
 
   addGroceryShop(shop:any) :Observable<any>{
     return  this.http.post(this.apiUrlIs,shop);
@@ -19,5 +30,10 @@ export class GroceryShopService {
   getAllGroceryshop():Observable<any> {
     return this.http.get(this.apiUrlIs);
   }
+
+  loginByShopID(id:any):Observable<any> {
+    return this.http.get(`${this.apiUrlIs}${id}`);
+  }
+ 
 
 }
