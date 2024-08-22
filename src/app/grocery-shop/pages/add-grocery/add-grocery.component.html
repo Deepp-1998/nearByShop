@@ -42,7 +42,7 @@
             <button class="btn btn-success btn-sm ms-2 " routerLink="../viewGrocery">View All Products</button>
         </div>
         <hr>
-        <div class="d-none" #publishAlertMsg>Product Deleted!!</div>
+        <div class="d-none" #publishAlertMsg>Now products available for public !!</div>
         <ng-container *ngFor="let groceryItem of addedGrocery">
             <app-grocery-item [groceryItem]="groceryItem" (deleteItemEvent)="deleteItem($event)"></app-grocery-item>
         </ng-container> 

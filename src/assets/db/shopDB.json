@@ -1,0 +1,100 @@
+{
+  "registeredShop": [
+    {
+      "id": "df46",
+      "shopDetails": {
+        "shopName": "Amit V store",
+        "firstOpenDate": "2024-08-01",
+        "licenceNo": "132345",
+        "pincode": "754433",
+        "shopAddress": "sadffgghn dfghx dd"
+      },
+      "ownerDetails": {
+        "ownerName": "Amit kumar",
+        "dob": "2024-08-13",
+        "gender": "male",
+        "mob": "08280147490",
+        "email": "pandey.deepak6@gmail.com"
+      }
+    },
+    {
+      "id": "t688",
+      "shopDetails": {
+        "shopName": "Tony Book Store",
+        "firstOpenDate": "2024-08-01",
+        "licenceNo": "132345",
+        "pincode": "754433",
+        "shopAddress": "Patia infornt of V mart,BBSR,Odisha"
+      },
+      "ownerDetails": {
+        "ownerName": "Amit kumar",
+        "dob": "2024-08-13",
+        "gender": "male",
+        "mob": "9876542887",
+        "email": "tonybookstore@gmail.com"
+      }
+    }
+  ],
+  "Products": [
+    {
+      "id": "21ee",
+      "productID": 43,
+      "productName": "Rice ",
+      "quantity": "45",
+      "units": 65,
+      "price": "767",
+      "Describtion": "Fvbhn,",
+      "shopID": "t688"
+    },
+    {
+      "id": "9968",
+      "productID": 56,
+      "productName": "676",
+      "quantity": "56",
+      "units": 677,
+      "price": "777",
+      "Describtion": "hgjj",
+      "shopID": "t688"
+    },
+    {
+      "id": "813c",
+      "productID": 77,
+      "productName": "sugar",
+      "quantity": "76",
+      "units": 76,
+      "price": "77",
+      "Describtion": "hgbhjnj",
+      "shopID": "t688"
+    },
+    {
+      "id": "bc9a",
+      "productID": 34,
+      "productName": "Sunfest Oil",
+      "quantity": "76",
+      "units": 76,
+      "price": "67",
+      "Describtion": "fhgbjnj",
+      "shopID": "t688"
+    },
+    {
+      "id": "b3df",
+      "productID": 6566,
+      "productName": "Ice cream",
+      "quantity": "45",
+      "units": 56,
+      "price": "76",
+      "Describtion": "fjhgkjk",
+      "shopID": "df46"
+    },
+    {
+      "id": "7fbf",
+      "productID": 456,
+      "productName": "cold Drink",
+      "quantity": "566",
+      "units": 677,
+      "price": "877",
+      "Describtion": "ghj",
+      "shopID": "df46"
+    }
+  ]
+}

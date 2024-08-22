@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GroceryShopService } from 'src/app/grocery-shop/services/grocery-shop.service';
+import { LoginService } from 'src/app/grocery-shop/services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -14,11 +15,14 @@ export class HeaderComponent implements OnInit{
 
   constructor(
     private groceryShopService:GroceryShopService, 
+    private loginService:LoginService
   ){}
 
   ngOnInit(): void {
-    this.getShopID = this.groceryShopService.getShopID;
-    // this.getShopID = sessionStorage.getItem('shopID');
-    console.log(this.getShopID)
+    
+  }
+
+  closeShop(){
+    this.loginService.logout();
   }
 }

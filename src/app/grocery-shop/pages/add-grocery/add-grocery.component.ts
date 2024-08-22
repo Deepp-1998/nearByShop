@@ -67,8 +67,11 @@ export class AddGroceryComponent implements OnInit,CanComponentDeactivate{
     let Products = this.addedGrocery;
     from(Products).pipe(  
       concatMap((item:any)=>{        
-        const getShopID = this.groceryShopService.getShopID().subscribe(id=>id)
-        const addAllProductToShopID = {...item, getShopID}; 
+        let shopID;
+        this.groceryShopService.getShopID().subscribe({
+          next: id=> shopID=id
+        })        
+        const addAllProductToShopID = {...item,shopID}; 
         return this.productService.postProduct(addAllProductToShopID);         
       })
     ).subscribe({

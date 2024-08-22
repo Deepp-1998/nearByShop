@@ -62,6 +62,9 @@
                     <button class="btn btn-success btn-lg me-3" type="submit">Submit</button>
                     <button class="btn btn-secondary btn-lg" type="reset">Reset</button>
                 </form>
+                <p>
+                    Already have account <a routerLink="../groceryShopLogin">Login</a>
+                </p>
                 <div class="alert alert-warning" role="alert" *ngIf="formErrorAlert">
                     Please complete all the field.
                     <button type="button" class="btn-close"  (click)="formErrorAlert=false"></button>

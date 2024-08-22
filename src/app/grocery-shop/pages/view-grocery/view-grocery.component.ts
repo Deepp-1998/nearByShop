@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
-import { filter, from, tap } from 'rxjs';
+import { catchError, concatMap, filter, forkJoin, from, map, of, tap } from 'rxjs';
+import { GroceryShopService } from '../../services/grocery-shop.service';
 
 @Component({
   selector: 'app-view-grocery',
@@ -12,7 +13,9 @@ export class ViewGroceryComponent implements OnInit{
   allProduct:any = [];
   @ViewChild('deleteMsgAlert') deleteMsgAlert!:ElementRef;
 
-  constructor(private productService:ProductsService) {
+  constructor(
+    private productService:ProductsService,
+    private groceryShopService:GroceryShopService) {
 
   }
 
@@ -21,12 +24,23 @@ export class ViewGroceryComponent implements OnInit{
     this.getAllProducts();
   }
 
-  getAllProducts() {
-    this.productService.getAllProduct().subscribe({
-      next: (products)=>{
+  getAllProducts() {   
+    forkJoin({
+      shopID: this.groceryShopService.getShopID(),
+      allProduct: this.productService.getAllProduct()
+    }).pipe(
+      map(({shopID,allProduct})=>{
+        return allProduct.filter((product:any)=>product.shopID===shopID)
+      }), 
+      catchError((err) => {
+        console.error("Error in product list:", err);
+        return of([]); 
+      })
+    ).subscribe({
+      next: (products)=> {
         this.allProduct = products; 
       },
-      error: (err)=>{console.error("Error is here",err)}
+      error: (err)=>console.error("Here errors in product list",err)
     })
   }
 

@@ -10,13 +10,14 @@ export class GroceryShopService {
   apiUrlIs = 'http://localhost:3000/registeredShop/';
 
   getShopDetails = new BehaviorSubject<object>({});
+  shopID = new BehaviorSubject<any>('');
  
   
   constructor(private http:HttpClient) { 
-    this.getShopID().subscribe(shopID => {
-      console.log("Shop ID:", shopID);
-    });
+    this.shopID.next(sessionStorage.getItem('shopID'));
   }
+
+  
 
   getShopID() :Observable<any>{
     const shopID = sessionStorage.getItem('shopID');

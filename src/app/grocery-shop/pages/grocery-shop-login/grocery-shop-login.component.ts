@@ -25,11 +25,8 @@ export class GroceryShopLoginComponent implements OnInit{
   loginToGroceryShop() {
     if (this.shopID.nativeElement.value !='') {   
       this.groceryShopService.loginByShopID(this.shopID.nativeElement.value).subscribe({
-        next: (shop)=> {
-          // this.getShopDetails = shop;
-          sessionStorage.setItem('shopID',shop.id);
-          this.groceryShopService.getShopDetails.next(shop); 
-          // this.groceryShopService.getShopID.next(shop.id); 
+        next: (shop)=> { 
+          sessionStorage.setItem('shopID',shop.id); 
           this.router.navigateByUrl('/groceryShop/dashboard');
         },
         error: (err)=> {         

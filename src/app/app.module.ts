@@ -9,6 +9,7 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; 
 import { GroceryShopService } from './grocery-shop/services/grocery-shop.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './grocery-shop/services/login.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [GroceryShopService],
+  providers: [GroceryShopService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
