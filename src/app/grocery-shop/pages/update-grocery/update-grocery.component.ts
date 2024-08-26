@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
+import { GroceryShopService } from '../../services/grocery-shop.service';
 
 @Component({
   selector: 'app-update-grocery',
@@ -17,6 +18,7 @@ export class UpdateGroceryComponent  implements OnInit {
     private activaeRoute: ActivatedRoute,
     private fb:FormBuilder,
     private productService:ProductsService,
+    private groceryShopService:GroceryShopService,
     private router: Router
   ){}
 
@@ -46,9 +48,15 @@ export class UpdateGroceryComponent  implements OnInit {
     })
   }
 
+  
   updateform() {
     if (this.groceryForm.valid) {
-      const updatedProduct =this.groceryForm.value
+      let updatedProduct =this.groceryForm.value;
+      let shopID;
+      this.groceryShopService.getShopID().subscribe({
+        next: id=> shopID=id
+      });
+      updatedProduct = {...updatedProduct,shopID:shopID};
       this.productService.updateProduct(this.productID,updatedProduct).subscribe({
         next: ()=>{
           alert("Product updated!");    

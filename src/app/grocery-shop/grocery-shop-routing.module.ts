@@ -7,6 +7,7 @@ import { AddGroceryComponent } from './pages/add-grocery/add-grocery.component';
 import { ViewGroceryComponent } from './pages/view-grocery/view-grocery.component';
 import { unSavedRegGuard } from './auth/un-saved-reg.guard';
 import { UpdateGroceryComponent } from './pages/update-grocery/update-grocery.component';
+import { loginGuard } from './auth/login.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'groceryShopLogin',pathMatch: 'full' },
@@ -14,20 +15,30 @@ const routes: Routes = [
   { 
     path: 'groceryShopReg', 
     component: GroceryShopRegComponent,
-    canDeactivate:[unSavedRegGuard]
+    canDeactivate:[unSavedRegGuard], 
   },
-  { path: 'dashboard', component: DashboardComponent },
+  { 
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate:[loginGuard]
+  },
   { 
     path: 'addGrocery', 
     component: AddGroceryComponent ,
-    canDeactivate:[unSavedRegGuard]
+    canDeactivate:[unSavedRegGuard],
+    canActivate:[loginGuard]
   },
   { 
     path: 'updateGrocery/:id', 
     component: UpdateGroceryComponent ,
-    canDeactivate:[unSavedRegGuard]
+    canDeactivate:[unSavedRegGuard],
+    canActivate:[loginGuard]
   },
-  { path: 'viewGrocery', component: ViewGroceryComponent },
+  { 
+    path: 'viewGrocery',
+    component: ViewGroceryComponent ,
+    canActivate:[loginGuard]
+  },
 ];
 
 @NgModule({

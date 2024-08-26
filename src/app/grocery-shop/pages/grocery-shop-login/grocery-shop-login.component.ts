@@ -29,7 +29,11 @@ export class GroceryShopLoginComponent implements OnInit{
           sessionStorage.setItem('shopID',shop.id); 
           this.router.navigateByUrl('/groceryShop/dashboard');
         },
-        error: (err)=> {         
+        error: (err)=> {      
+          this.loginAlertMsg = true
+          setTimeout(() => {
+            this.loginAlertMsg = false          
+          }, 2000); 
           console.error("Unable to fecth the shop details",err)
         }
       })
@@ -38,7 +42,7 @@ export class GroceryShopLoginComponent implements OnInit{
       this.loginAlertMsg = true
       setTimeout(() => {
         this.loginAlertMsg = false          
-      }, 2000);
+      }, 2000); 
     }
   }
 }

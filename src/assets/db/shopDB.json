@@ -37,24 +37,24 @@
   ],
   "Products": [
     {
-      "id": "21ee",
       "productID": 43,
-      "productName": "Rice ",
+      "productName": "Rice  10kg",
       "quantity": "45",
       "units": 65,
       "price": "767",
-      "Describtion": "Fvbhn,",
-      "shopID": "t688"
+      "Describtion": "Fvbhn,thg",
+      "shopID": "t688",
+      "id": "21ee"
     },
     {
-      "id": "9968",
       "productID": 56,
-      "productName": "676",
+      "productName": "Biryani Rice",
       "quantity": "56",
       "units": 677,
       "price": "777",
       "Describtion": "hgjj",
-      "shopID": "t688"
+      "shopID": "t688",
+      "id": "9968"
     },
     {
       "id": "813c",
