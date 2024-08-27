@@ -1,0 +1,30 @@
+<div class="card my-5">
+    <h4 class="card-header">Visit Your Near by Shop</h4>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Sl#</th>
+                    <th scope="col">Shop name</th>
+                    <th scope="col">Distance</th>
+                    <th scope="col" width="100px">Visit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let shop of allShop;index as i">
+                    <td>
+                        {{i +1}}
+                    </td>
+                    <td>
+                        {{shop.shopDetails.shopName}}
+                    </td>
+                    <td>--</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" [routerLink]="['/customer/visitOneShop',shop.id]">Visit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

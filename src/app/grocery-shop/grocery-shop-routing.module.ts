@@ -30,8 +30,7 @@ const routes: Routes = [
   },
   { 
     path: 'updateGrocery/:id', 
-    component: UpdateGroceryComponent ,
-    canDeactivate:[unSavedRegGuard],
+    component: UpdateGroceryComponent , 
     canActivate:[loginGuard]
   },
   { 

@@ -19,7 +19,8 @@ export class HeaderComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    
+    this.groceryShopService.getShopDetails.subscribe((shop)=>this.shopDetails=shop);
+    console.log(this.shopDetails)
   }
 
   closeShop(){

@@ -9,7 +9,7 @@ export class GroceryShopService {
 
   apiUrlIs = 'http://localhost:3000/registeredShop/';
 
-  getShopDetails = new BehaviorSubject<object>({});
+  getShopDetails = new BehaviorSubject<any>({});
   shopID = new BehaviorSubject<any>('');
  
   
@@ -33,8 +33,14 @@ export class GroceryShopService {
   }
 
   loginByShopID(id:any):Observable<any> {
-    return this.http.get(`${this.apiUrlIs}${id}`);
+    this.http.get(`${this.apiUrlIs}${id}`).subscribe({
+      next: (shop)=>{
+        this.getShopDetails.next(shop);
+      },
+      error: (err)=> {
+        console.log('Unable to fetch shop details',err)
+      }
+    })
+    return this.getShopDetails;    
   }
- 
-
 }
