@@ -18,6 +18,23 @@
       }
     },
     {
+      "id": "df47",
+      "shopDetails": {
+        "shopName": "Rajat Smart point",
+        "firstOpenDate": "2024-08-01",
+        "licenceNo": "132345",
+        "pincode": "754433",
+        "shopAddress": "sadffgghn dfghx dd"
+      },
+      "ownerDetails": {
+        "ownerName": "Rajat kumar",
+        "dob": "2024-08-13",
+        "gender": "male",
+        "mob": "876564312",
+        "email": "pandey.rajat@gmail.com"
+      }
+    },
+    {
       "id": "t688",
       "shopDetails": {
         "shopName": "Tony Book Store",

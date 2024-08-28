@@ -32,7 +32,7 @@ export class GroceryShopService {
     return this.http.get(this.apiUrlIs);
   }
 
-  loginByShopID(id:any):Observable<any> {
+  getShopByID(id:any):Observable<any> {
     this.http.get(`${this.apiUrlIs}${id}`).subscribe({
       next: (shop)=>{
         this.getShopDetails.next(shop);

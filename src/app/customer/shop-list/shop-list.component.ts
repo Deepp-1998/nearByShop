@@ -16,8 +16,7 @@ export class ShopListComponent  implements OnInit {
   ngOnInit(): void {
     this.groceryShopService.getAllGroceryshop().subscribe({
       next: (shopList)=> {
-        this.allShop = shopList;
-        console.log(this.allShop)
+        this.allShop = shopList; 
       },
       error: (err)=>console.error("Unable to get shop",err)
     })
